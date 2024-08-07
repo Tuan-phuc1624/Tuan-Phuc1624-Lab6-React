@@ -1,38 +1,153 @@
-.App {
-  text-align: center;
+body {
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pizza-builder {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.pizza-base {
+  position: relative;
+  width: 300px; /* Điều chỉnh kích thước theo nhu cầu của bạn */
+  height: 300px; /* Điều chỉnh kích thước theo nhu cầu của bạn */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.pizza-base img {
+  width: 100%;
+  height: auto;
+  grid-column: span 3;
+  grid-row: span 3;
+  z-index: 1;
+}
+
+.topping-image {
+  width: 80px; /* Điều chỉnh kích thước của các topping */
+  height: auto;
+  z-index: 2;
+}
+
+.topping-controls {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.topping-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Chỉnh đều các phần tử trong hàng */
+  background-color: #f8f9fa; /* Màu nền nhạt */
+  padding: 10px; /* Khoảng đệm bên trong */
+  margin-bottom: 10px; /* Khoảng cách giữa các hàng */
+  border: 1px solid #dee2e6; /* Đường viền nhạt */
+  border-radius: 5px; /* Bo tròn góc */
+  width: 300px; /* Chiều rộng nhất định */
+}
+
+.topping-control span {
+  flex: 1;
+  text-align: center; /* Canh giữa văn bản */
+}
+
+.topping-control button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: none;
   color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px; /* Bo tròn góc */
 }
 
-.App-link {
-  color: #61dafb;
+.topping-control button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.topping-control .add-btn {
+  background-color: #28a745;
+}
+
+.topping-control .remove-btn {
+  background-color: #dc3545;
+}
+
+.order-summary {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.order-summary h3 {
+  margin-bottom: 20px;
+}
+
+.order-summary button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px; /* Bo tròn góc */
+}
+
+.order-summary button.reset-btn {
+  background-color: #ffc107;
+}
+
+.order-summary button:hover {
+  opacity: 0.8;
+}
+
+.topping-link {
+  flex: 1;
+  text-align: left;
+  text-decoration: none;
+  color: black;
+}
+
+.topping-link:hover {
+  text-decoration: underline;
+}
+
+.topping-detail {
+  text-align: center;
+  margin: 50px;
+}
+
+.topping-detail h2 {
+  margin-bottom: 20px;
+}
+
+.topping-detail p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.topping-detail button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px; /* Bo tròn góc */
+}
+
+.topping-detail button:hover {
+  opacity: 0.8;
+}
+
+.topping-detail img {
+  width: 300px;
+  height: auto;
+  margin-top: 20px;
 }
